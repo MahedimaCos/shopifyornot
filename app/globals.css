@@ -1,35 +1,70 @@
 @import "tailwindcss";
 
-/* Design System Variables - Based on UI_DESIGN.md */
+/* Design System Variables - Based on UI_DESIGN.md (Next.js Design System) */
 :root {
     /* Primary Colors */
-    --background: #ffffff;
-    --foreground: #1f2933;
-    --accent: #14a44d;
+    --black: #000000;
+    --white: #ffffff;
+    --blue: #0070f3;
 
     /* Gray Scale */
-    --gray-100: #f8fafc;
-    --gray-200: #e4e9f0;
-    --gray-400: #7b8794;
-    --gray-600: #52616b;
-    --gray-900: #0f172a;
+    --gray-near-black: #111111;
+    --gray-secondary: #333333;
+    --gray-tertiary: #666666;
+    --gray-disabled: #999999;
+    --gray-border: #eeeeee;
+    --gray-light-bg: #fafafa;
 
-    /* Status Colors */
-    --success: #14a44d;
-    --error: #c62828;
-    --warning: #f59e0b;
+    /* Semantic Colors */
+    --success: #0cad00;
+    --warning: #f5a623;
+    --error: #ee0000;
+    --info: #0070f3;
+
+    /* Dark Mode Colors */
+    --dark-bg: #000000;
+    --dark-surface: #1a1a1a;
+    --dark-border: #333333;
+    --dark-text-primary: #ffffff;
+    --dark-text-secondary: #888888;
+
+    /* Spacing (8px baseline grid) */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 96px;
+    --spacing-5xl: 128px;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --shadow-md: 0 8px 16px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 16px 32px rgba(0, 0, 0, 0.12);
+
+    /* Transitions */
+    --transition-fast: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-accent: var(--accent);
+    --color-background: var(--white);
+    --color-foreground: var(--black);
+    --color-accent: var(--blue);
     --font-sans: var(
         --font-inter,
         "Inter",
         -apple-system,
         BlinkMacSystemFont,
         "Segoe UI",
+        Roboto,
         sans-serif
     );
 }
@@ -39,9 +74,11 @@ html {
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
+    background: var(--white);
+    color: var(--black);
     font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
     margin: 0;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
@@ -56,11 +93,11 @@ body {
 
 /* Selection styling */
 ::selection {
-    background-color: rgba(20, 164, 77, 0.2);
-    color: var(--foreground);
+    background-color: rgba(0, 112, 243, 0.2);
+    color: var(--black);
 }
 
 ::-moz-selection {
-    background-color: rgba(20, 164, 77, 0.2);
-    color: var(--foreground);
+    background-color: rgba(0, 112, 243, 0.2);
+    color: var(--black);
 }
