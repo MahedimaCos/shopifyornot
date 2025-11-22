@@ -30,17 +30,25 @@ export default function Navbar() {
               className="h-7 w-7"
               priority
             />
-            <span>ShopifyOrNot</span>
+            <span className="hidden sm:inline">ShopifyOrNot</span>
           </Link>
 
           <div className="flex items-center gap-6">
-            {/* The Story Link */}
-            <Link
-              href="/the-story"
-              className="text-sm font-medium text-[#424242] hover:text-[#008060] transition-colors"
-            >
-              The Story
-            </Link>
+            {/* Nav Links */}
+            <div className="flex items-center gap-4">
+              <Link
+                href="/the-story"
+                className="text-sm font-medium text-[#424242] hover:text-[#008060] transition-colors"
+              >
+                The Story
+              </Link>
+              <Link
+                href="/api-docs"
+                className="text-sm font-medium text-[#424242] hover:text-[#008060] transition-colors"
+              >
+                API Docs
+              </Link>
+            </div>
 
             {/* GitHub Star Button */}
             <motion.a
