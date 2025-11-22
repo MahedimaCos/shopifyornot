@@ -1,6 +1,4 @@
 import { FormEvent, useCallback, useMemo, useState, useEffect } from "react";
-
-import { formatConfidence } from "../lib/confidence";
 import { createShopifyChecker } from "../services/shopifyChecker";
 import { ShopifyResult, NormalizedShopifyCheckResponse } from "../types/shopify";
 
@@ -94,9 +92,9 @@ export const useShopifyCheck = ({ fetcher, initialUrl = "", autoCheck = false }:
   );
 
   const handleSubmit = useCallback(
-    async (event: FormEvent<HTMLFormElement>) => {
+    (event: FormEvent<HTMLFormElement>) => {
       event.preventDefault();
-      await checkUrl(url);
+      void checkUrl(url);
     },
     [checkUrl, url],
   );

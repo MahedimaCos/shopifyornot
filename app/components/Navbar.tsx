@@ -4,21 +4,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Star } from 'lucide-react';
 import Link from 'next/link';
+import { navbarVariants } from '../utils/animations';
 
 export default function Navbar() {
-
-  const navbarVariants = {
-    hidden: { y: -100, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        ease: [0.25, 0.1, 0.25, 1],
-      },
-    },
-  };
-
   return (
     <motion.nav
       className="bg-transparent"

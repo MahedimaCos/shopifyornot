@@ -1,8 +1,12 @@
 import styles from "../page.module.css";
-import { NormalizedShopifyCheckResponse } from "../types/shopify";
+
+type TechnicalDetailsSource = {
+  detected_signals: string[];
+  headers_sample?: Record<string, string>;
+};
 
 type TechnicalDetailsProps = {
-  result: NormalizedShopifyCheckResponse;
+  result: TechnicalDetailsSource;
   showTechnical: boolean;
   onToggle: () => void;
 };

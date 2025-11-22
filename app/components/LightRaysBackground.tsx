@@ -1,9 +1,32 @@
 'use client';
 
-import React from 'react';
+import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 
+type ParticleConfig = {
+  left: string;
+  top: string;
+  xOffset: number;
+  duration: number;
+};
+
 export default function LightRaysBackground() {
+  const particles: ParticleConfig[] = useMemo(() => {
+    return Array.from({ length: 20 }).map((_, index) => {
+      const left = `${(index * 13) % 100}%`;
+      const top = `${(index * 29) % 100}%`;
+      const xOffset = (index % 5) * 8 - 16;
+      const duration = 12 + (index % 4) * 2;
+
+      return {
+        left,
+        top,
+        xOffset,
+        duration,
+      };
+    });
+  }, []);
+
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
       {/* Base gradient background */}
@@ -166,24 +189,24 @@ export default function LightRaysBackground() {
 
       {/* Floating particles */}
       <div className="absolute inset-0">
-        {[...Array(20)].map((_, i) => (
+        {particles.map((particle, index) => (
           <motion.div
-            key={`particle-${i}`}
+            key={`particle-${index}`}
             className="absolute w-1 h-1 bg-[#00A56A] rounded-full"
             style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
+              left: particle.left,
+              top: particle.top,
             }}
             animate={{
               y: [-20, -100, -20],
-              x: [0, Math.random() * 40 - 20, 0],
+              x: [0, particle.xOffset, 0],
               opacity: [0, 0.6, 0],
             }}
             transition={{
-              duration: 10 + Math.random() * 10,
+              duration: particle.duration,
               repeat: Infinity,
               ease: "easeOut",
-              delay: i * 0.5,
+              delay: index * 0.5,
             }}
           />
         ))}
