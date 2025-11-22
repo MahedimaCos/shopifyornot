@@ -64,7 +64,7 @@ export default function HomePage() {
           )}
 
           {/* Detection Methods */}
-          {!result && <DetectionMethods />}
+          <DetectionMethods />
 
         </div>
       </section>
