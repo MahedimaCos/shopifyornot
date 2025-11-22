@@ -30,7 +30,13 @@ export default function LightRaysBackground() {
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
       {/* Base gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white via-[#E6F7F1] to-[#F0FBF8]" />
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-br from-white via-[#E6F7F1] to-[#F0FBF8]"
+        style={{ backgroundSize: "200% 200%" }}
+        initial={{ backgroundPosition: "0% 0%" }}
+        animate={{ backgroundPosition: ["0% 0%", "100% 100%", "0% 0%"] }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      />
 
       {/* Animated light rays */}
       <svg

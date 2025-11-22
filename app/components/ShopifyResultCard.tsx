@@ -111,7 +111,7 @@ export default function ShopifyResultCard({
                 <Card variant="elevated" padding="lg" className="relative overflow-hidden">
                     {/* Animated background pattern */}
                     <motion.div
-                        className="absolute inset-0 opacity-5"
+                        className="absolute inset-0 opacity-[0.02]"
                         initial={{ backgroundPosition: "0% 0%" }}
                         animate={{ backgroundPosition: "100% 100%" }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
