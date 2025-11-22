@@ -125,6 +125,20 @@ export default function DetectionMethods() {
                     </motion.div>
                 ))}
             </motion.div>
+
+            <div className="mt-10 max-w-md mx-auto text-center text-xs text-[#666666]">
+                <p className="font-semibold mb-1">Message to Shopify</p>
+                <p>
+                    Heard you have a thing for blocking domains. If that includes us, say hi at
+                    <a
+                        href="mailto:buildnship@gmail.com"
+                        className="inline-flex items-center px-1 py-0.5 rounded-full bg-[#E6F7F1] text-[#049e28] font-medium"
+                    >
+                        buildnship@gmail.com
+                    </a>
+                    so we can proudly say the official Shopify team dropped by.
+                </p>
+            </div>
         </section>
     );
 }
