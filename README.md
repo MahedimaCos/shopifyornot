@@ -5,7 +5,7 @@ ShopifyOrNot is a minimal, single-page web app that lets SalesOps and revenue te
 ### What it does
 
 - Accepts any website URL and normalizes / follows redirects.
-- Calls the detection API at `https://dev-api.makemypass.com/check?url=<INPUT_URL>`.
+- Calls the internal Edge route at `/api/check?url=<INPUT_URL>`, which forwards to the ShopifyOrNot backend at `https://api.shopifyornot.in/check?url=<INPUT_URL>`.
 - Interprets the API response into a clear result card:
   - Is this a Shopify store?
   - Confidence score.
@@ -33,7 +33,7 @@ npm run dev
 
 - Built with the Next.js App Router and TypeScript.
 - UI styled to loosely follow Shopify marketing patterns (see `UI_DESIGN.md`).
-- Shopify detection is centralized in the Edge route `app/api/check/route.ts`, which proxies to `https://dev-api.makemypass.com/check`.
+- Shopify detection is centralized in the Edge route `app/api/check/route.ts`, which proxies to `https://api.shopifyornot.in/check`.
 - `app/hooks/useShopifyCheck.ts` encapsulates request/response wiring and transforms API JSON into the UI-friendly `ShopifyResult` shape.
 
 ### Project structure (high level)
