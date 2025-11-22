@@ -187,7 +187,7 @@ export default function ShopifyResultCard({
                                 <Button
                                     variant="ghost"
                                     size="sm"
-                                    onClick={() => window.open(result.url, "_blank")}
+                                    onClick={() => window.open(result.url)}
                                     className="flex-1 sm:flex-initial"
                                     icon={<ExternalLink className="h-4 w-4" />}
                                 >

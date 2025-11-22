@@ -96,7 +96,7 @@ export default function DynamicPage() {
           )}
 
           {/* Detection Methods */}
-          {!result && <DetectionMethods />}
+          <DetectionMethods />
 
         </div>
       </section>

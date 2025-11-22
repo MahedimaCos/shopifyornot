@@ -38,7 +38,7 @@ export default function ShopifyCheckerForm({
         const hasProtocol = /^https?:\/\//i.test(trimmed);
         const targetUrl = hasProtocol ? trimmed : `https://${trimmed}`;
 
-        window.open(targetUrl, "_blank", "noopener,noreferrer");
+        window.open(targetUrl);
     };
 
     const formVariants = {
