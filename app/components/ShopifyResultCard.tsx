@@ -228,41 +228,43 @@ export default function ShopifyResultCard({
                         </motion.div>
 
                         {/* Confidence Meter */}
-                        <motion.div
-                            className="mb-6"
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: 0.5 }}
-                        >
-                            <div className="flex items-center justify-between gap-2 flex-wrap mb-2">
-                                <span className="text-sm font-medium text-[#424242]">
-                                    Detection Confidence
-                                </span>
-                                <span className="text-sm font-bold text-[#008060]">
-                                    {confidenceDisplay}
-                                </span>
-                            </div>
-                            <div className="h-3 bg-[#F6F6F6] rounded-full overflow-hidden">
-                                <motion.div
-                                    className="h-full rounded-full"
-                                    initial={{ width: 0 }}
-                                    animate={{ width: `${result.confidence * 100}%` }}
-                                    transition={{
-                                        duration: 0.8,
-                                        delay: 0.6,
-                                        ease: [0.25, 0.1, 0.25, 1],
-                                    }}
-                                    style={{
-                                        background:
-                                            result.confidence > 0.7
-                                                ? "linear-gradient(90deg, #00A56A 0%, #008060 100%)"
-                                                : result.confidence > 0.3
-                                                ? "linear-gradient(90deg, #FFC453 0%, #FFB020 100%)"
-                                                : "linear-gradient(90deg, #E34850 0%, #D72C0D 100%)",
-                                    }}
-                                />
-                            </div>
-                        </motion.div>
+                        {result.isShopify && (
+                            <motion.div
+                                className="mb-6"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.5 }}
+                            >
+                                <div className="flex items-center justify-between gap-2 flex-wrap mb-2">
+                                    <span className="text-sm font-medium text-[#424242]">
+                                        Detection Confidence
+                                    </span>
+                                    <span className="text-sm font-bold text-[#008060]">
+                                        {confidenceDisplay}
+                                    </span>
+                                </div>
+                                <div className="h-3 bg-[#F6F6F6] rounded-full overflow-hidden">
+                                    <motion.div
+                                        className="h-full rounded-full"
+                                        initial={{ width: 0 }}
+                                        animate={{ width: `${result.confidence * 100}%` }}
+                                        transition={{
+                                            duration: 0.8,
+                                            delay: 0.6,
+                                            ease: [0.25, 0.1, 0.25, 1],
+                                        }}
+                                        style={{
+                                            background:
+                                                result.confidence > 0.7
+                                                    ? "linear-gradient(90deg, #00A56A 0%, #008060 100%)"
+                                                    : result.confidence > 0.3
+                                                    ? "linear-gradient(90deg, #FFC453 0%, #FFB020 100%)"
+                                                    : "linear-gradient(90deg, #E34850 0%, #D72C0D 100%)",
+                                        }}
+                                    />
+                                </div>
+                            </motion.div>
+                        )}
 
                         {/* Quick Stats */}
                         {result.isShopify && (
