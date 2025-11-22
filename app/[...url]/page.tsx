@@ -22,9 +22,7 @@ export default function DynamicPage() {
   try {
     urlFromPath = decodeURIComponent(rawUrlFromPath);
     // Remove any protocol if it was accidentally included
-    urlFromPath = urlFromPath.replace(/^(https?:\/\/)/, '');
-    // Clean up any double slashes that might have been encoded
-    urlFromPath = urlFromPath.replace(/\/\//g, '/');
+    urlFromPath = urlFromPath.replace(/^(https?:\/{0,2})/i, '');
   } catch {
     // If decoding fails, use the raw path
     urlFromPath = rawUrlFromPath;
