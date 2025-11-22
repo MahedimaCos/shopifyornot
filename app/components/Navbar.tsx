@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Github, Star } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { navbarVariants } from '../utils/animations';
 
 export default function Navbar() {
@@ -17,8 +18,19 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="text-base font-medium text-[#1A1A1A] hover:text-[#008060] transition-colors">
-            ShopifyOrNot
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-base font-medium text-[#1A1A1A] hover:text-[#008060] transition-colors"
+          >
+            <Image
+              src="/logo.png"
+              alt="ShopifyOrNot logo"
+              width={28}
+              height={28}
+              className="h-7 w-7"
+              priority
+            />
+            <span>ShopifyOrNot</span>
           </Link>
 
           {/* GitHub Star Button */}
