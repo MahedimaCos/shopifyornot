@@ -37,6 +37,7 @@ export default function ShopifyResultCard({
     onToggleTechnical,
 }: ShopifyResultCardProps) {
     const [copied, setCopied] = React.useState(false);
+    const hasConfidence = result.confidence > 0;
 
     const handleCopy = () => {
         navigator.clipboard.writeText(result.url);
@@ -157,9 +158,11 @@ export default function ShopifyResultCard({
                                             ? "Shopify Store Detected!"
                                             : "Not a Shopify Store"}
                                     </h3>
-                                    <p className="text-sm text-[#999999] mt-1">
-                                        Confidence: {confidenceDisplay}
-                                    </p>
+                                    {hasConfidence && (
+                                        <p className="text-sm text-[#999999] mt-1">
+                                            Confidence: {confidenceDisplay}
+                                        </p>
+                                    )}
                                 </div>
                             </motion.div>
 
@@ -239,9 +242,11 @@ export default function ShopifyResultCard({
                                     <span className="text-sm font-medium text-[#424242]">
                                         Detection Confidence
                                     </span>
-                                    <span className="text-sm font-bold text-[#008060]">
-                                        {confidenceDisplay}
-                                    </span>
+                                    {hasConfidence && (
+                                        <span className="text-sm font-bold text-[#008060]">
+                                            {confidenceDisplay}
+                                        </span>
+                                    )}
                                 </div>
                                 <div className="h-3 bg-[#F6F6F6] rounded-full overflow-hidden">
                                     <motion.div
