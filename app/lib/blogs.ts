@@ -19,6 +19,37 @@ export type BlogPost = {
 
 const blogsDirectory = path.join(process.cwd(), "app", "blogs");
 
+function stripLeadingHeading(markdown: string) {
+    const lines = markdown.split(/\r?\n/);
+    if (lines.length === 0) {
+        return markdown;
+    }
+
+    // Find the first non-empty line
+    const firstNonEmptyIndex = lines.findIndex((line) => line.trim() !== "");
+    if (firstNonEmptyIndex === -1) {
+        return markdown;
+    }
+
+    const firstLine = lines[firstNonEmptyIndex].trim();
+    if (!firstLine.startsWith("#")) {
+        return markdown;
+    }
+
+    // Skip the heading and any following subtitle/meta lines (bold, italic, or empty)
+    let startIndex = firstNonEmptyIndex + 1;
+    while (startIndex < lines.length) {
+        const line = lines[startIndex].trim();
+        // Stop if we hit actual content (not empty, not bold-only subtitle, not italic-only date)
+        if (line !== "" && !line.match(/^\*\*[^*]+\*\*$/) && !line.match(/^_[^_]+_$/)) {
+            break;
+        }
+        startIndex++;
+    }
+
+    return lines.slice(startIndex).join("\n").trimStart();
+}
+
 export async function getBlogSlugs(): Promise<string[]> {
     const entries = await fs.promises.readdir(blogsDirectory);
 
@@ -46,7 +77,7 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
         return {
             slug,
             frontmatter,
-            content,
+            content: stripLeadingHeading(content),
         };
     } catch {
         return null;
